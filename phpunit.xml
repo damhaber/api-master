@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         verbose="true">
+    
+    <testsuites>
+        <testsuite name="API Master Test Suite">
+            <directory>tests/api</directory>
+            <directory>tests/core</directory>
+            <directory>tests/learning</directory>
+            <directory>tests/vector</directory>
+            <directory>tests/security</directory>
+            <directory>tests/integration</directory>
+        </testsuite>
+        
+        <testsuite name="Performance Tests">
+            <directory>tests/performance</directory>
+        </testsuite>
+    </testsuites>
+    
+    <coverage>
+        <include>
+            <directory suffix=".php">api/</directory>
+            <directory suffix=".php">core/</directory>
+            <directory suffix=".php">includes/</directory>
+            <directory suffix=".php">learning/</directory>
+            <directory suffix=".php">security/</directory>
+            <directory suffix=".php">vector/</directory>
+        </include>
+        
+        <exclude>
+            <directory>tests/</directory>
+            <directory>vendor/</directory>
+            <directory>examples/</directory>
+            <directory>docs/</directory>
+        </exclude>
+        
+        <report>
+            <html outputDirectory="coverage/"/>
+            <clover outputFile="coverage/clover.xml"/>
+            <text outputFile="coverage/coverage.txt"/>
+        </report>
+    </coverage>
+    
+    <php>
+        <ini name="error_reporting" value="E_ALL"/>
+        <ini name="display_errors" value="1"/>
+        <ini name="date.timezone" value="UTC"/>
+        
+        <env name="APIM_TEST_MODE" value="true"/>
+        <env name="APIM_DB_HOST" value="localhost"/>
+        <env name="APIM_DB_NAME" value="apimaster_test"/>
+        <env name="APIM_DB_USER" value="root"/>
+        <env name="APIM_DB_PASS" value=""/>
+        
+        <server name="HTTP_HOST" value="localhost"/>
+        <server name="SERVER_NAME" value="localhost"/>
+        <server name="SERVER_PORT" value="80"/>
+        <server name="REQUEST_URI" value="/"/>
+    </php>
+    
+    <logging>
+        <log type="junit" target="logs/junit.xml"/>
+        <log type="testdox-html" target="logs/testdox.html"/>
+        <log type="testdox-text" target="logs/testdox.txt"/>
+    </logging>
+    
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">api/</directory>
+            <directory suffix=".php">core/</directory>
+            <directory suffix=".php">includes/</directory>
+            <directory suffix=".php">learning/</directory>
+            <directory suffix=".php">security/</directory>
+            <directory suffix=".php">vector/</directory>
+        </whitelist>
+    </filter>
+    
+    <listeners>
+        <listener class="\PHPUnit\Framework\TestListener"/>
+    </listeners>
+</phpunit>

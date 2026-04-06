@@ -1,0 +1,115 @@
+{
+    "name": "apimaster/api-master",
+    "description": "Advanced API Management System for WordPress with learning capabilities and vector memory",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "API Master Team",
+            "email": "support@apimaster.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpstan/phpstan": "^1.10",
+        "phpdocumentor/phpdocumentor": "^3.0",
+        "mockery/mockery": "^1.5",
+        "vimeo/psalm": "^5.0",
+        "friendsofphp/php-cs-fixer": "^3.14",
+        "phpbench/phpbench": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIMaster\\": "includes/",
+            "APIMaster\\API\\": "api/",
+            "APIMaster\\Core\\": "core/",
+            "APIMaster\\Learning\\": "learning/",
+            "APIMaster\\Vector\\": "vector/",
+            "APIMaster\\Security\\": "security/",
+            "APIMaster\\Tests\\": "tests/"
+        },
+        "files": [
+            "api-master.php",
+            "includes/class-database.php",
+            "includes/class-encryption.php",
+            "includes/class-constants.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIMaster\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage",
+        "benchmark": "phpbench run --report=default",
+        "lint": "phpcs --standard=PSR12 includes/ api/ core/",
+        "lint-fix": "phpcbf --standard=PSR12 includes/ api/ core/",
+        "analyze": "phpstan analyse includes/ api/ core/ --level=8",
+        "psalm": "psalm",
+        "docs": "phpdoc -d ./ -t docs/api",
+        "pre-commit": [
+            "@lint",
+            "@analyze",
+            "@test"
+        ],
+        "post-install-cmd": [
+            "@setup"
+        ],
+        "post-update-cmd": [
+            "@setup"
+        ],
+        "setup": "php bin/setup.php",
+        "deploy": "bash deploy.sh"
+    },
+    "scripts-descriptions": {
+        "test": "Run all tests",
+        "test-coverage": "Generate test coverage report",
+        "benchmark": "Run performance benchmarks",
+        "lint": "Check code style",
+        "lint-fix": "Fix code style issues",
+        "analyze": "Static analysis with PHPStan",
+        "psalm": "Static analysis with Psalm",
+        "docs": "Generate API documentation",
+        "pre-commit": "Run before commit (lint, analyze, test)",
+        "setup": "Initial setup after install",
+        "deploy": "Deploy the plugin"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "support": {
+        "email": "support@apimaster.com",
+        "issues": "https://github.com/apimaster/api-master/issues",
+        "wiki": "https://github.com/apimaster/api-master/wiki",
+        "source": "https://github.com/apimaster/api-master"
+    },
+    "keywords": [
+        "wordpress",
+        "plugin",
+        "api",
+        "management",
+        "machine-learning",
+        "vector-database",
+        "encryption",
+        "security"
+    ]
+}
