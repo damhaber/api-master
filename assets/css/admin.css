@@ -1,0 +1,571 @@
+/**
+ * API Master - Admin Panel Styles
+ * @package APIMaster
+ * @subpackage Assets/CSS
+ * @version 1.0.0
+ */
+
+/* ============================================
+   VARIABLES & RESET
+   ============================================ */
+:root {
+    --apim-primary: #4361ee;
+    --apim-primary-dark: #3a56d4;
+    --apim-secondary: #7209b7;
+    --apim-success: #06d6a0;
+    --apim-danger: #ef476f;
+    --apim-warning: #ffd166;
+    --apim-info: #118ab2;
+    --apim-dark: #073b4c;
+    --apim-light: #f8f9fa;
+    --apim-gray: #6c757d;
+    --apim-border: #dee2e6;
+    --apim-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+    --apim-radius: 12px;
+    --apim-radius-sm: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.apim-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.apim-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--apim-radius);
+    box-shadow: var(--apim-shadow);
+    overflow: hidden;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.apim-header {
+    background: linear-gradient(135deg, var(--apim-primary) 0%, var(--apim-secondary) 100%);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.apim-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.apim-header h1::before {
+    content: '🔌';
+    font-size: 28px;
+}
+
+.apim-version {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.apim-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 30px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--apim-success);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ============================================
+   NAVIGATION TABS
+   ============================================ */
+.apim-nav {
+    display: flex;
+    background: var(--apim-light);
+    border-bottom: 1px solid var(--apim-border);
+    padding: 0 20px;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.apim-nav-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--apim-gray);
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.apim-nav-item:hover {
+    color: var(--apim-primary);
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.apim-nav-item.active {
+    color: var(--apim-primary);
+    border-bottom-color: var(--apim-primary);
+}
+
+/* ============================================
+   CONTENT PANELS
+   ============================================ */
+.apim-content {
+    padding: 30px;
+}
+
+.apim-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.apim-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   STATS CARDS
+   ============================================ */
+.apim-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.apim-stat-card {
+    background: white;
+    border: 1px solid var(--apim-border);
+    border-radius: var(--apim-radius);
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.apim-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--apim-shadow);
+}
+
+.stat-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--apim-dark);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--apim-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-trend {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.trend-up { color: var(--apim-success); }
+.trend-down { color: var(--apim-danger); }
+
+/* ============================================
+   API PROVIDERS TABLE
+   ============================================ */
+.apim-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--apim-radius-sm);
+    border: 1px solid var(--apim-border);
+}
+
+.apim-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.apim-table th {
+    background: var(--apim-light);
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--apim-dark);
+    border-bottom: 1px solid var(--apim-border);
+}
+
+.apim-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--apim-border);
+    font-size: 14px;
+}
+
+.apim-table tr:hover {
+    background: rgba(67, 97, 238, 0.03);
+}
+
+.provider-status {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-active { background: var(--apim-success); }
+.status-inactive { background: var(--apim-danger); }
+.status-maintenance { background: var(--apim-warning); }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.apim-btn {
+    padding: 8px 16px;
+    border-radius: var(--apim-radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.apim-btn-primary {
+    background: var(--apim-primary);
+    color: white;
+}
+
+.apim-btn-primary:hover {
+    background: var(--apim-primary-dark);
+    transform: translateY(-1px);
+}
+
+.apim-btn-secondary {
+    background: var(--apim-secondary);
+    color: white;
+}
+
+.apim-btn-danger {
+    background: var(--apim-danger);
+    color: white;
+}
+
+.apim-btn-success {
+    background: var(--apim-success);
+    color: white;
+}
+
+.apim-btn-outline {
+    background: transparent;
+    border-color: var(--apim-border);
+    color: var(--apim-gray);
+}
+
+.apim-btn-outline:hover {
+    border-color: var(--apim-primary);
+    color: var(--apim-primary);
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+.apim-form-group {
+    margin-bottom: 20px;
+}
+
+.apim-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--apim-dark);
+}
+
+.apim-input,
+.apim-select,
+.apim-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--apim-border);
+    border-radius: var(--apim-radius-sm);
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.apim-input:focus,
+.apim-select:focus,
+.apim-textarea:focus {
+    outline: none;
+    border-color: var(--apim-primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.apim-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ============================================
+   ALERTS & NOTIFICATIONS
+   ============================================ */
+.apim-alert {
+    padding: 15px 20px;
+    border-radius: var(--apim-radius-sm);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.apim-alert-success {
+    background: #d4edda;
+    border-left: 4px solid var(--apim-success);
+    color: #155724;
+}
+
+.apim-alert-error {
+    background: #f8d7da;
+    border-left: 4px solid var(--apim-danger);
+    color: #721c24;
+}
+
+.apim-alert-warning {
+    background: #fff3cd;
+    border-left: 4px solid var(--apim-warning);
+    color: #856404;
+}
+
+.apim-alert-info {
+    background: #d1ecf1;
+    border-left: 4px solid var(--apim-info);
+    color: #0c5460;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+.apim-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.apim-modal.active {
+    display: flex;
+}
+
+.apim-modal-content {
+    background: white;
+    border-radius: var(--apim-radius);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.apim-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--apim-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.apim-modal-close {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--apim-gray);
+}
+
+.apim-modal-body {
+    padding: 20px;
+}
+
+.apim-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--apim-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ============================================
+   SPINNER & LOADING
+   ============================================ */
+.apim-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.apim-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .apim-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .apim-content {
+        padding: 20px;
+    }
+    
+    .apim-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .apim-nav {
+        justify-content: center;
+    }
+    
+    .apim-table th,
+    .apim-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    .apim-container {
+        background: #1a1a2e;
+    }
+    
+    .apim-stat-card,
+    .apim-table {
+        background: #16213e;
+        border-color: #0f3460;
+    }
+    
+    .apim-stat-card .stat-value {
+        color: #e2e2e2;
+    }
+    
+    .apim-table td {
+        color: #c4c4c4;
+        border-color: #0f3460;
+    }
+    
+    .apim-table th {
+        background: #0f3460;
+        color: #e2e2e2;
+    }
+    
+    .apim-input,
+    .apim-select,
+    .apim-textarea {
+        background: #0f3460;
+        border-color: #1a1a2e;
+        color: #e2e2e2;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .apim-nav,
+    .apim-btn,
+    .apim-status-badge {
+        display: none;
+    }
+    
+    .apim-wrapper {
+        background: white;
+        padding: 0;
+    }
+    
+    .apim-stat-card {
+        break-inside: avoid;
+    }
+}

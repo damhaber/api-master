@@ -1,0 +1,64 @@
+{
+    "version": "1.0.0",
+    "updated_at": 1775466908,
+    "module": {
+        "name": "API Master",
+        "is_standalone": true,
+        "wordpress_independent": true
+    },
+    "debug": {
+        "mode": false,
+        "level": "info",
+        "log_queries": false,
+        "show_stack_trace": false
+    },
+    "cache": {
+        "enabled": true,
+        "ttl": 3600,
+        "max_ttl": 86400,
+        "driver": "file",
+        "compression": true,
+        "prefix": "apimaster_cache_"
+    },
+    "rate_limiting": {
+        "enabled": true,
+        "per_minute": 60,
+        "per_hour": 1000,
+        "per_day": 10000,
+        "algorithm": "token_bucket",
+        "storage": "file"
+    },
+    "learning": {
+        "enabled": true,
+        "auto_learn": true,
+        "confidence_threshold": 0.7,
+        "feedback_required": true,
+        "model_type": "lightgbm"
+    },
+    "api": {
+        "default_provider": "openai",
+        "default_model": "gpt-3.5-turbo",
+        "timeout": 30,
+        "retry_count": 3,
+        "retry_delay": 1000
+    },
+    "paths": {
+        "root": ".",
+        "config": ".\/config",
+        "data": ".\/data",
+        "cache": ".\/cache",
+        "logs": ".\/logs",
+        "backups": ".\/backups"
+    },
+    "security": {
+        "encryption_enabled": true,
+        "hash_algorithm": "sha256",
+        "api_key_length": 32,
+        "jwt_enabled": false
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics_retention_days": 30,
+        "health_check_interval": 300
+    }
+}

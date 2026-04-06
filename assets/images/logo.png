@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4361ee;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#7209b7;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="95" fill="white" stroke="url(#gradient)" stroke-width="3"/>
+    
+    <!-- API Master Icon -->
+    <path d="M70,80 L130,80 L100,120 L70,80Z" fill="url(#gradient)" opacity="0.9"/>
+    <circle cx="100" cy="80" r="15" fill="white" stroke="url(#gradient)" stroke-width="2"/>
+    <circle cx="100" cy="120" r="15" fill="white" stroke="url(#gradient)" stroke-width="2"/>
+    
+    <!-- A Letter -->
+    <path d="M85,60 L100,30 L115,60 L100,45 L85,60Z" fill="url(#gradient)"/>
+    <rect x="95" y="50" width="10" height="25" fill="url(#gradient)"/>
+    
+    <!-- P Letter -->
+    <path d="M125,50 L125,80 L135,80 C140,80 145,75 145,70 C145,65 140,60 135,60 L130,60 L130,50 Z" 
+          fill="url(#gradient)"/>
+    
+    <!-- I Dot -->
+    <circle cx="150" cy="45" r="5" fill="url(#gradient)"/>
+    <rect x="148" y="50" width="4" height="30" fill="url(#gradient)"/>
+    
+    <!-- Decorative Elements -->
+    <circle cx="50" cy="150" r="8" fill="url(#gradient)" opacity="0.6"/>
+    <circle cx="150" cy="150" r="8" fill="url(#gradient)" opacity="0.6"/>
+    <circle cx="100" cy="170" r="6" fill="url(#gradient)" opacity="0.8"/>
+    
+    <!-- Neural Network Pattern -->
+    <line x1="70" y1="140" x2="85" y2="125" stroke="url(#gradient)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="130" y1="140" x2="115" y2="125" stroke="url(#gradient)" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <line x1="100" y1="155" x2="100" y2="140" stroke="url(#gradient)" stroke-width="1.5" stroke-dasharray="3,3"/>
+</svg>

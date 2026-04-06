@@ -1,0 +1,37 @@
+{
+    "version": "1.0.0",
+    "updated_at": "2026-01-15T10:30:00+00:00",
+    "enabled": true,
+    "dimension": 1536,
+    "index_type": "hnsw",
+    "similarity_metric": "cosine",
+    "hnsw": {
+        "max_levels": 10,
+        "ef_construction": 200,
+        "ef_search": 50,
+        "max_connections": 16
+    },
+    "memory": {
+        "short_term_limit": 1000,
+        "long_term_limit": 100000,
+        "consolidation_threshold": 0.7,
+        "ttl_short_term": 3600,
+        "ttl_long_term": 2592000
+    },
+    "quantization": {
+        "enabled": false,
+        "type": "scalar",
+        "bits": 8
+    },
+    "storage": {
+        "path": "./data/vectors",
+        "auto_save": true,
+        "save_interval": 100,
+        "compression": true
+    },
+    "indexing": {
+        "auto_index": true,
+        "reindex_on_start": false,
+        "batch_size": 100
+    }
+}

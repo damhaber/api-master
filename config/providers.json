@@ -1,0 +1,1035 @@
+{
+    "version": "3.1",
+    "last_updated": "2026-04-06 10:00:00",
+    "providers": {
+        "openai": {
+            "name": "OpenAI GPT",
+            "class": "class-openai.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.openai.com\/v1",
+            "api_key": "",
+            "models": [
+                "gpt-4",
+                "gpt-4-turbo",
+                "gpt-3.5-turbo",
+                "gpt-4o"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 3500
+            },
+            "description": "OpenAI'nin GPT serisi dil modelleri"
+        },
+        "anthropic": {
+            "name": "Anthropic Claude",
+            "class": "class-anthropic.php",
+            "is_active": true,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.anthropic.com\/v1",
+            "api_key": "",
+            "models": [
+                "claude-3-opus",
+                "claude-3-sonnet",
+                "claude-3-haiku",
+                "claude-2.1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Anthropic'in güvenli ve güçlü Claude modelleri"
+        },
+        "google_ai": {
+            "name": "Google Gemini",
+            "class": "class-gemini.php",
+            "is_active": true,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/generativelanguage.googleapis.com\/v1",
+            "api_key": "",
+            "models": [
+                "gemini-pro",
+                "gemini-pro-vision",
+                "gemini-ultra"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Google'ın çok modlu Gemini yapay zeka modeli"
+        },
+        "deepseek": {
+            "name": "DeepSeek",
+            "class": "class-deepseek.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.deepseek.com\/v1",
+            "api_key": "sk-7975b331b55a4b9bbe1c62319d85f4ae",
+            "models": [
+                "deepseek-chat",
+                "deepseek-coder",
+                "deepseek-v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "DeepSeek'in uygun fiyatlı ve güçlü dil modeli"
+        },
+        "mistral": {
+            "name": "Mistral AI",
+            "class": "class-mistral.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.mistral.ai\/v1",
+            "api_key": "",
+            "models": [
+                "mistral-tiny",
+                "mistral-small",
+                "mistral-medium",
+                "mistral-large"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Mistral AI'nın açık kaynak odaklı modelleri"
+        },
+        "cohere": {
+            "name": "Cohere",
+            "class": "class-cohere.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.cohere.ai\/v1",
+            "api_key": "",
+            "models": [
+                "command",
+                "command-light",
+                "embed-english-v3",
+                "embed-multilingual-v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Cohere'in NLP ve embedding modelleri"
+        },
+        "groq": {
+            "name": "Groq",
+            "class": "class-groq.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.groq.com\/openai\/v1",
+            "api_key": "",
+            "models": [
+                "mixtral-8x7b",
+                "llama3-70b",
+                "llama3-8b",
+                "gemma-7b"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Groq'un yüksek hızlı LPU çipleriyle çalışan modeller"
+        },
+        "ollama": {
+            "name": "Ollama",
+            "class": "class-ollama.php",
+            "is_active": true,
+            "auth_type": "none",
+            "base_url": "http:\/\/localhost:11434",
+            "api_key": "",
+            "models": [
+                "llama2",
+                "mistral",
+                "codellama",
+                "phi",
+                "neural-chat"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 999
+            },
+            "description": "Yerel olarak çalışan açık kaynak modeller"
+        },
+        "llama": {
+            "name": "Llama",
+            "class": "class-llama.php",
+            "is_active": true,
+            "auth_type": "none",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "llama-2-7b",
+                "llama-2-13b",
+                "llama-2-70b",
+                "llama-3-8b",
+                "llama-3-70b"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Meta'nın açık kaynak Llama modelleri"
+        },
+        "claude": {
+            "name": "Claude",
+            "class": "class-claude.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.anthropic.com\/v1",
+            "api_key": "",
+            "models": [
+                "claude-2",
+                "claude-instant",
+                "claude-3-opus"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Anthropic'in Claude modelleri (alternatif)"
+        },
+        "perplexity": {
+            "name": "Perplexity AI",
+            "class": "class-perplexity.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.perplexity.ai",
+            "api_key": "",
+            "models": [
+                "llama-3-sonar-small-online",
+                "llama-3-sonar-large-online",
+                "pplx-7b-online"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Perplexity'in internet bağlantılı modelleri"
+        },
+        "replicate": {
+            "name": "Replicate",
+            "class": "class-replicate.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.replicate.com\/v1",
+            "api_key": "",
+            "models": [
+                "meta\/llama-2-70b",
+                "stability-ai\/stable-diffusion",
+                "mistralai\/mistral-7b"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Replicate üzerinden çalışan çeşitli modeller"
+        },
+        "huggingface": {
+            "name": "Hugging Face",
+            "class": "class-huggingface.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api-inference.huggingface.co\/models",
+            "api_key": "",
+            "models": [
+                "mistral-7b",
+                "llama-2-7b",
+                "falcon-7b",
+                "bloom"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Hugging Face Inference API"
+        },
+        "elevenlabs": {
+            "name": "ElevenLabs TTS",
+            "class": "class-elevenlabs.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.elevenlabs.io\/v1",
+            "api_key": "",
+            "models": [
+                "eleven_monolingual_v1",
+                "eleven_multilingual_v2",
+                "eleven_turbo_v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "ElevenLabs'in yüksek kaliteli metin-ses dönüştürme modelleri"
+        },
+        "stabilityai": {
+            "name": "Stability AI",
+            "class": "class-stabilityai.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.stability.ai\/v1",
+            "api_key": "",
+            "models": [
+                "sd-xl",
+                "sd-3",
+                "sd-turbo",
+                "sd-3.5"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Stability AI'nin görsel oluşturma modelleri"
+        },
+        "openai-whisper": {
+            "name": "OpenAI Whisper",
+            "class": "class-openai-whisper.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.openai.com\/v1\/audio",
+            "api_key": "",
+            "models": [
+                "whisper-1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "OpenAI'nin konuşma tanıma modeli"
+        },
+        "google_cloud": {
+            "name": "Google Cloud",
+            "class": "class-google-cloud.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/cloud.google.com\/apis",
+            "api_key": "",
+            "models": [
+                "vision",
+                "speech",
+                "translate",
+                "video"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Google Cloud AI hizmetleri"
+        },
+        "azure": {
+            "name": "Azure OpenAI",
+            "class": "class-azure.php",
+            "is_active": true,
+            "auth_type": "api_key",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "gpt-4",
+                "gpt-35-turbo",
+                "dall-e-3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Microsoft Azure OpenAI hizmeti"
+        },
+        "aws": {
+            "name": "AWS Bedrock",
+            "class": "class-aws.php",
+            "is_active": false,
+            "auth_type": "aws",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "claude",
+                "llama2",
+                "titan",
+                "jurassic"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "AWS Bedrock yapay zeka modelleri"
+        },
+        "chromadb": {
+            "name": "ChromaDB",
+            "class": "class-chromadb.php",
+            "is_active": true,
+            "auth_type": "none",
+            "base_url": "http:\/\/localhost:8000",
+            "api_key": "",
+            "models": [
+                "vector-db",
+                "embedding"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Açık kaynak vektör veritabanı"
+        },
+        "pinecone": {
+            "name": "Pinecone",
+            "class": "class-pinecone.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "vector-db"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Yönetilen vektör veritabanı"
+        },
+        "weaviate": {
+            "name": "Weaviate",
+            "class": "class-weaviate.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "vector-db"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Açık kaynak vektör arama motoru"
+        },
+        "midjourney": {
+            "name": "Midjourney",
+            "class": "class-midjourney.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "mj-v5",
+                "mj-v6",
+                "niji"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 20
+            },
+            "description": "Midjourney görsel oluşturma"
+        },
+        "d-id": {
+            "name": "D-ID",
+            "class": "class-d-id.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.d-id.com",
+            "api_key": "",
+            "models": [
+                "avatar",
+                "talking-head"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Yapay zeka avatar ve konuşan kafa oluşturma"
+        },
+        "heygen": {
+            "name": "HeyGen",
+            "class": "class-heygen.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.heygen.com\/v1",
+            "api_key": "",
+            "models": [
+                "avatar-v2",
+                "streaming-avatar"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Yapay zeka avatar video oluşturma"
+        },
+        "github": {
+            "name": "GitHub API",
+            "class": "class-github.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.github.com",
+            "api_key": "",
+            "models": [
+                "rest-api-v3",
+                "graphql-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "GitHub REST ve GraphQL API"
+        },
+        "gitlab": {
+            "name": "GitLab API",
+            "class": "class-gitlab.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/gitlab.com\/api\/v4",
+            "api_key": "",
+            "models": [
+                "api-v4"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "GitLab API v4"
+        },
+        "bitbucket": {
+            "name": "Bitbucket",
+            "class": "class-bitbucket.php",
+            "is_active": false,
+            "auth_type": "basic",
+            "base_url": "https:\/\/api.bitbucket.org\/2.0",
+            "api_key": "",
+            "models": [
+                "api-v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Bitbucket API v2"
+        },
+        "slack": {
+            "name": "Slack API",
+            "class": "class-slack.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/slack.com\/api",
+            "api_key": "",
+            "models": [
+                "webhook",
+                "bot",
+                "socket-mode"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Slack entegrasyon API'si"
+        },
+        "discord": {
+            "name": "Discord Bot",
+            "class": "class-discord.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/discord.com\/api\/v10",
+            "api_key": "",
+            "models": [
+                "bot-api",
+                "webhook"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Discord Bot API"
+        },
+        "telegram": {
+            "name": "Telegram Bot",
+            "class": "class-telegram.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.telegram.org\/bot",
+            "api_key": "",
+            "models": [
+                "bot-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Telegram Bot API"
+        },
+        "twitter": {
+            "name": "Twitter\/X API",
+            "class": "class-twitter.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.twitter.com\/2",
+            "api_key": "",
+            "models": [
+                "api-v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 300
+            },
+            "description": "Twitter\/X API v2"
+        },
+        "reddit": {
+            "name": "Reddit API",
+            "class": "class-reddit.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/oauth.reddit.com\/api\/v1",
+            "api_key": "",
+            "models": [
+                "api-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Reddit API"
+        },
+        "youtube": {
+            "name": "YouTube Data API",
+            "class": "class-youtube.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/www.googleapis.com\/youtube\/v3",
+            "api_key": "",
+            "models": [
+                "v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 10000
+            },
+            "description": "YouTube Data API v3"
+        },
+        "spotify": {
+            "name": "Spotify API",
+            "class": "class-spotify.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.spotify.com\/v1",
+            "api_key": "",
+            "models": [
+                "web-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 180
+            },
+            "description": "Spotify Web API"
+        },
+        "notion": {
+            "name": "Notion API",
+            "class": "class-notion.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.notion.com\/v1",
+            "api_key": "",
+            "models": [
+                "api-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Notion API"
+        },
+        "jira": {
+            "name": "Jira API",
+            "class": "class-jira.php",
+            "is_active": false,
+            "auth_type": "basic",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "api-v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Jira Cloud API"
+        },
+        "confluence": {
+            "name": "Confluence",
+            "class": "class-confluence.php",
+            "is_active": true,
+            "auth_type": "basic",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "api-v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Confluence API"
+        },
+        "stripe": {
+            "name": "Stripe",
+            "class": "class-stripe.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.stripe.com\/v1",
+            "api_key": "",
+            "models": [
+                "payment-api",
+                "customer-api",
+                "subscription-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Stripe ödeme işlemleri API'si"
+        },
+        "paypal": {
+            "name": "PayPal",
+            "class": "class-paypal.php",
+            "is_active": true,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.paypal.com\/v2",
+            "api_key": "",
+            "models": [
+                "payments-api",
+                "payouts-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "PayPal ödeme API'si"
+        },
+        "twilio": {
+            "name": "Twilio",
+            "class": "class-twilio.php",
+            "is_active": false,
+            "auth_type": "basic",
+            "base_url": "https:\/\/api.twilio.com\/2010-04-01",
+            "api_key": "",
+            "models": [
+                "sms-api",
+                "voice-api",
+                "whatsapp-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Twilio iletişim API'si"
+        },
+        "sendgrid": {
+            "name": "SendGrid",
+            "class": "class-sendgrid.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.sendgrid.com\/v3",
+            "api_key": "",
+            "models": [
+                "mail-api",
+                "email-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "SendGrid e-posta gönderim API'si"
+        },
+        "mailchimp": {
+            "name": "Mailchimp",
+            "class": "class-mailchimp.php",
+            "is_active": false,
+            "auth_type": "basic",
+            "base_url": "https:\/\/{dc}.api.mailchimp.com\/3.0",
+            "api_key": "",
+            "models": [
+                "api-v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Mailchimp e-posta pazarlama API'si"
+        },
+        "hubspot": {
+            "name": "HubSpot",
+            "class": "class-hubspot.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.hubapi.com",
+            "api_key": "",
+            "models": [
+                "crm-api",
+                "marketing-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "HubSpot CRM API'si"
+        },
+        "salesforce": {
+            "name": "Salesforce",
+            "class": "class-salesforce.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "rest-api",
+                "soap-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Salesforce CRM API"
+        },
+        "google_drive": {
+            "name": "Google Drive",
+            "class": "class-google-drive.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/www.googleapis.com\/drive\/v3",
+            "api_key": "",
+            "models": [
+                "api-v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 1000
+            },
+            "description": "Google Drive API"
+        },
+        "dropbox": {
+            "name": "Dropbox",
+            "class": "class-dropbox.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.dropboxapi.com\/2",
+            "api_key": "",
+            "models": [
+                "api-v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Dropbox API v2"
+        },
+        "google_calendar": {
+            "name": "Google Calendar",
+            "class": "class-google-calendar.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/www.googleapis.com\/calendar\/v3",
+            "api_key": "",
+            "models": [
+                "api-v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Google Calendar API"
+        },
+        "google_analytics": {
+            "name": "Google Analytics",
+            "class": "class-google-analytics.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/analyticsdata.googleapis.com\/v1beta",
+            "api_key": "",
+            "models": [
+                "api-v4"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Google Analytics Data API"
+        },
+        "google_search": {
+            "name": "Google Search",
+            "class": "class-google-search.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/www.googleapis.com\/customsearch\/v1",
+            "api_key": "",
+            "models": [
+                "cse-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Google Custom Search API"
+        },
+        "bing": {
+            "name": "Bing Search",
+            "class": "class-bing.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.bing.microsoft.com\/v7.0\/search",
+            "api_key": "",
+            "models": [
+                "web-search"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "Bing Web Search API"
+        },
+        "newsapi": {
+            "name": "NewsAPI",
+            "class": "class-newsapi.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/newsapi.org\/v2",
+            "api_key": "",
+            "models": [
+                "v2"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "NewsAPI haber akışı"
+        },
+        "weather": {
+            "name": "OpenWeather",
+            "class": "class-weather.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.openweathermap.org\/data\/2.5",
+            "api_key": "",
+            "models": [
+                "2.5"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 60
+            },
+            "description": "OpenWeather hava durumu API'si"
+        },
+        "wikipedia": {
+            "name": "Wikipedia",
+            "class": "class-wikipedia.php",
+            "is_active": false,
+            "auth_type": "none",
+            "base_url": "https:\/\/en.wikipedia.org\/api\/rest_v1",
+            "api_key": "",
+            "models": [
+                "api-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Wikipedia API"
+        },
+        "translate": {
+            "name": "Google Translate",
+            "class": "class-translate.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/translation.googleapis.com\/v3",
+            "api_key": "",
+            "models": [
+                "v2",
+                "v3"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Google Cloud Translation API"
+        },
+        "zoom": {
+            "name": "Zoom API",
+            "class": "class-zoom.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/api.zoom.us\/v2",
+            "api_key": "",
+            "models": [
+                "video-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Zoom Video API"
+        },
+        "trello": {
+            "name": "Trello API",
+            "class": "class-trello.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "https:\/\/api.trello.com\/1",
+            "api_key": "",
+            "models": [
+                "api-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Trello API"
+        },
+        "zapier": {
+            "name": "Zapier",
+            "class": "class-zapier.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/hooks.zapier.com",
+            "api_key": "",
+            "models": [
+                "webhook"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Zapier Webhook entegrasyonu"
+        },
+        "make": {
+            "name": "Make\/Integromat",
+            "class": "class-make.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "https:\/\/hook.eu1.make.com",
+            "api_key": "",
+            "models": [
+                "webhook"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Make (Integromat) webhook"
+        },
+        "pabbly": {
+            "name": "Pabbly",
+            "class": "class-pabbly.php",
+            "is_active": false,
+            "auth_type": "bearer",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "webhook"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 100
+            },
+            "description": "Pabbly webhook"
+        },
+        "stable_diffusion": {
+            "name": "Stable Diffusion",
+            "class": "class-stable-diffusion.php",
+            "is_active": false,
+            "auth_type": "api_key",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "sd-1.5",
+                "sd-2.1",
+                "sd-xl"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 50
+            },
+            "description": "Stable Diffusion görsel oluşturma"
+        },
+        "duckduckgo": {
+            "name": "DuckDuckGo",
+            "class": "class-duckduckgo.php",
+            "is_active": false,
+            "auth_type": "none",
+            "base_url": "https:\/\/api.duckduckgo.com",
+            "api_key": "",
+            "models": [
+                "instant-answer"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "DuckDuckGo Instant Answer API"
+        },
+        "yahoo_finance": {
+            "name": "Yahoo Finance",
+            "class": "class-yahoo-finance.php",
+            "is_active": false,
+            "auth_type": "none",
+            "base_url": "https:\/\/query1.finance.yahoo.com\/v7\/finance",
+            "api_key": "",
+            "models": [
+                "api-v1"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 30
+            },
+            "description": "Yahoo Finance API"
+        },
+        "aws_s3": {
+            "name": "AWS S3",
+            "class": "class-aws-s3.php",
+            "is_active": false,
+            "auth_type": "aws",
+            "base_url": "",
+            "api_key": "",
+            "models": [
+                "s3-api"
+            ],
+            "rate_limits": {
+                "requests_per_minute": 1000
+            },
+            "description": "AWS S3 Storage API"
+        }
+    }
+}

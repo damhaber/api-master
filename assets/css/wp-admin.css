@@ -1,0 +1,25 @@
+/* API Master - WordPress Admin Uyumluluk */
+.api-master-wrap {
+    margin: 20px 20px 0 0;
+}
+
+/* Panel.php içindeki container WordPress ile çakışmasın */
+.api-master-wrap .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+/* WordPress admin bar altında düzgün görünsün */
+body.toplevel_page_api-master {
+    background: #0a0a0a;
+}
+
+/* Modal'lar WordPress'ten yüksek olsun */
+.modal {
+    z-index: 100000 !important;
+}
+
+/* Toast mesajları altta kalsın */
+.toast {
+    z-index: 100001 !important;
+}

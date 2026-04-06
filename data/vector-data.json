@@ -1,0 +1,13 @@
+{
+    "version": "1.0",
+    "vectors": [],
+    "index": {
+        "type": "hnsw",
+        "dimension": 1536,
+        "max_elements": 100000
+    },
+    "metadata": {
+        "total_vectors": 0,
+        "last_indexed": "2024-01-01 00:00:00"
+    }
+}

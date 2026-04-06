@@ -1,0 +1,14 @@
+[
+    {
+        "id": "webhook_1",
+        "name": "Örnek Webhook",
+        "url": "https://webhook.site/example",
+        "events": ["api.request", "api.response", "api.error"],
+        "secret": "whsec_demo123",
+        "is_active": true,
+        "created_at": "2026-04-05T00:00:00+00:00",
+        "last_triggered": null,
+        "delivery_count": 0,
+        "failure_count": 0
+    }
+]

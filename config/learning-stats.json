@@ -1,0 +1,45 @@
+{
+    "version": "1.0.0",
+    "feedback_count": 0,
+    "accuracy": 0,
+    "model_type": "lightgbm",
+    "confidence_threshold": 0.7,
+    "total_predictions": 0,
+    "correct_predictions": 0,
+    "last_training": null,
+    "status": "idle",
+    "intents": {
+        "question": {
+            "count": 0,
+            "accuracy": 0,
+            "examples": []
+        },
+        "command": {
+            "count": 0,
+            "accuracy": 0,
+            "examples": []
+        },
+        "greeting": {
+            "count": 0,
+            "accuracy": 0,
+            "examples": []
+        },
+        "farewell": {
+            "count": 0,
+            "accuracy": 0,
+            "examples": []
+        },
+        "feedback": {
+            "count": 0,
+            "accuracy": 0,
+            "examples": []
+        }
+    },
+    "training_history": [],
+    "settings": {
+        "auto_learn": true,
+        "auto_train_hourly": false,
+        "min_feedback_for_training": 10,
+        "max_training_samples": 10000
+    }
+}
